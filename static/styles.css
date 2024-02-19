@@ -7,3 +7,11 @@
 h1{
     font-family: monospace, sans-serif;
 }
+
+a{
+    text-decoration: none !important;
+}
+
+a:hover{
+    color: yellow;
+}
