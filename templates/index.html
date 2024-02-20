@@ -47,10 +47,10 @@
         <div class="card bg-primary bg-gradient bg-opacity-50 border-0" style="height: 22rem; width: auto;">
           <div class="card-body p-4">
             <img src="{{ img[i] }}" alt="book_cover" class="card-img-top mb-2 rounded"
-              style="width: auto; height: 150px;">
+              style="width: 6rem; height: 150px;">
             <h5 class="text-white" style="font-size: 1.1rem;">{{ book[i] }}</h5>
             <h6 class="text-warning">{{ author[i] }}</h6>
-            <h6 class="text-white">{{ votes[i] }}</h6>
+            <h6 class="text-white">{{ votes[i] }}&nbsp;reviews</h6>
             {% if rating[i] <= p_25 %} <h6 class="text-white p-1 border-1 rounded w-25 text-center"
               style="background-color: red !important;">{{ rating[i] }}</h6>
               {% elif rating[i] > p_25 and rating[i] <= p_50 %} <h6
