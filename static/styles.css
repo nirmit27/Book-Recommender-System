@@ -8,14 +8,23 @@
     display: none;
 }
 
+body{
+    background-image: url("./blue_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
 a{
     text-decoration: none !important;
 }
 
 a:hover{
-    color: blueviolet !important;
+    color: rgb(204, 177, 230) !important;
 }
 
 img{
-    box-shadow: 0 0 8px whitesmoke;
+    box-shadow: 0 0 4px grey;
 }

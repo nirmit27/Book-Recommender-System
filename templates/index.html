@@ -24,7 +24,7 @@
   </head>
   <body class="bg-black">
     <!------------------------------------------- N A V B A R ------------------------------------------->
-    <nav class="navbar navbar-expand-lg bg-dark bg-gradient>
+    <nav class="navbar navbar-expand-lg bg-dark bg-gradient bg-opacity-75">
       <div class="container-fluid">
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav">
@@ -58,13 +58,13 @@
 
         {% for i in range(book|length) %}
         <div class="col-md-3 mt-4">
-          <div class="card bg-transparent" style="height: 24rem;">
+          <div class="card bg-primary bg-gradient bg-opacity-10 border-0" style="height: 24rem;">
             <div class="card-body p-4">
               <img src="{{ img[i] }}" alt="book_cover" class="card-img-top mb-3 rounded" style="width: auto; height: 180px;">
-              <h5 class="text-white">{{ book[i] }}</h2>
-              <h6 class="text-white">{{ author[i] }}</h4>
-              <h6 class="text-white">{{ votes[i] }}</h4>
-              <h6 class="text-white">{{ rating[i] }}</h4>
+              <h5 class="text-white">{{ book[i] }}</h5>
+              <h6 class="text-white">{{ author[i] }}</h6>
+              <h6 class="text-white">{{ votes[i] }}</h6>
+              <h6 class="text-white">{{ rating[i] }}</h6>
             </div>
           </div>
         </div>
@@ -72,12 +72,8 @@
 
       </div>
     </div>
-
-      <!-- {% for i in range(book|length) %} -->
-      <!-- {% endfor %} -->
-
     </div>
-
     <!--------------------------------------------------------------------------------------------------->
+    
   </body>
 </html>
