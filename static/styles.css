@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-h1{
-    font-family: monospace, sans-serif;
+*::-webkit-scrollbar{
+    display: none;
 }
 
 a{
@@ -13,5 +13,9 @@ a{
 }
 
 a:hover{
-    color: yellow;
+    color: blueviolet !important;
+}
+
+img{
+    box-shadow: 0 0 8px whitesmoke;
 }
