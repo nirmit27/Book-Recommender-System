@@ -14,9 +14,9 @@ def index():
                            img = list(df['Image-URL-M'].values[:50]),
                            votes = list(df['Total_Votes'].values[:50]),
                            rating = list(df['Average_Rating'].values[:50]),
-                           min_rating = df['Average_Rating'].min(),
-                           mean_rating = df['Average_Rating'].mean(),
-                           max_rating = df['Average_Rating'].max())
+                           p_25=df['Average_Rating'][:50].describe()['25%'],
+                           p_50=df['Average_Rating'][:50].describe()['50%'],
+                           p_75=df['Average_Rating'][:50].describe()['75%'])
 
 
 if __name__ == "__main__":
