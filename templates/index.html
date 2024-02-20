@@ -58,11 +58,11 @@
 
         {% for i in range(book|length) %}
         <div class="col-md-3 mt-4">
-          <div class="card bg-primary bg-gradient bg-opacity-10 border-0" style="height: 24rem;">
+          <div class="card bg-primary bg-gradient bg-opacity-50 border-0" style="height: 24rem;">
             <div class="card-body p-4">
               <img src="{{ img[i] }}" alt="book_cover" class="card-img-top mb-3 rounded" style="width: auto; height: 180px;">
-              <h5 class="text-white">{{ book[i] }}</h5>
-              <h6 class="text-white">{{ author[i] }}</h6>
+              <h5 class="text-white" style="font-size: 1.1rem;">{{ book[i] }}</h5>
+              <h6 class="text-warning">{{ author[i] }}</h6>
               <h6 class="text-white">{{ votes[i] }}</h6>
               <h6 class="text-white">{{ rating[i] }}</h6>
             </div>
