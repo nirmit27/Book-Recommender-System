@@ -27,6 +27,7 @@
     <nav class="navbar navbar-expand-lg bg-dark bg-gradient bg-opacity-75">
       <div class="container-fluid">
         <div class="collapse navbar-collapse">
+          <a class="navbar-brand mr-4 text-info fw-bold" href="/">Recommender</a>
           <ul class="navbar-nav">
             <li class="nav-item mx-4">
               <a class="nav-link active text-white" aria-current="page" href="/"
@@ -60,11 +61,11 @@
         <div class="col-md-3 mt-4">
           <div class="card bg-primary bg-gradient bg-opacity-50 border-0" style="height: 24rem;">
             <div class="card-body p-4">
-              <img src="{{ img[i] }}" alt="book_cover" class="card-img-top mb-3 rounded" style="width: auto; height: 180px;">
-              <h5 class="text-white" style="font-size: 1.1rem;">{{ book[i] }}</h5>
+              <img src="{{ img[i] }}" alt="book_cover" class="card-img-top mb-2 rounded" style="width: auto; height: 170px;">
+              <h5 class="text-white" style="font-size: 1.2rem;">{{ book[i] }}</h5>
               <h6 class="text-warning">{{ author[i] }}</h6>
               <h6 class="text-white">{{ votes[i] }}</h6>
-              <h6 class="text-white">{{ rating[i] }}</h6>
+              <h6 class="text-dark p-2 bg-white border-1 rounded w-25 text-center">{{ rating[i] }}</h6>
             </div>
           </div>
         </div>

@@ -13,7 +13,10 @@ def index():
                            author = list(df['Book-Author'].values[:50]),
                            img = list(df['Image-URL-M'].values[:50]),
                            votes = list(df['Total_Votes'].values[:50]),
-                           rating = list(df['Average_Rating'].values[:50]))
+                           rating = list(df['Average_Rating'].values[:50]),
+                           min_rating = df['Average_Rating'].min(),
+                           mean_rating = df['Average_Rating'].mean(),
+                           max_rating = df['Average_Rating'].max())
 
 
 if __name__ == "__main__":
