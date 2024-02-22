@@ -24,13 +24,20 @@ def data_util1(book):
 
 def data_util2(book):
     res = []
-    for sugg in sdf.loc[book].values:
+    try:
+        x = sdf.loc[book]
+    except KeyError as e:
+        return res
+    for sugg in x.values:
         res.append(data_util1(sugg))
     return res
 
 
 def data_util3(book):
     res = []
+    x = data_util2(book)
+    if len(x) == 0:
+        return []
     for item in data_util2(book):
         res.append(item)
     return res
@@ -39,9 +46,12 @@ def data_util3(book):
 
 
 if __name__ == "__main__":
-    # for row in data_util3('The Da Vinci Code'):
-    #     for value in row.values:
-    #         print(
-    #             f"Title : {value[0]}\nAuthor : {value[1]}\nImage : {value[2]}\nVotes : {value[3]}\nRating : {round(value[4], 2)}\n")
-    #     print()
-    pass
+    ans = data_util3('Anime')
+    if len(ans) == 0:
+        print('No such entry!')
+    else:
+        for row in ans:
+            for value in row.values:
+                print(
+                    f"Title : {value[0]}\nAuthor : {value[1]}\nImage : {value[2]}\nVotes : {value[3]}\nRating :     {round(value[4], 2)}\n")
+            print()
