@@ -9,6 +9,7 @@
 }
 
 body {
+    position: relative;
     background-image: url("./blue_bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -38,32 +39,53 @@ img {
     box-shadow: 0 0 5px 1px white;
 }
 
-#sub-btn{
+#sub-btn {
     border: none !important;
     color: blueviolet;
     background-color: white;
 }
 
-#sub-btn:focus{
+#sub-btn:focus {
     box-shadow: 0 0 10px gold !important;
 }
 
-#sub-btn:hover{
+#sub-btn:hover {
     color: white;
     background-color: slateblue !important;
 }
 
-#sub-btn:active{
+#sub-btn:active {
     color: white;
     background-color: blueviolet !important;
 }
 
-#search-box{
+#search-box {
     border: none !important;
 }
 
-#search-box:focus{
+#search-box:focus {
     outline: none !important;
     border: none !important;
     box-shadow: 0 0 10px gold;
+}
+
+#footer {
+    margin-top: 4rem;
+    background-color: #031f4c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    padding: 0.5rem;
+    opacity: 0.8;
+}
+
+#footer>code {
+    color: whitesmoke;
+}
+
+#footer>code>a{
+    color: yellow;
 }

@@ -34,8 +34,11 @@ def recommend_ui():
 def recommend():
     res = ''
     user_input = request.form.get('user_input')
-    suggestions = sf(str(user_input))
-    return render_template('recommend.html', data=suggestions, title="Top 5 Suggestions for ", book_title=str(user_input))
+    suggestions = sf(str(user_input).strip())
+    if len(suggestions) == 0:
+        return render_template('recommend.html', data=[], title="No suggestions found for ", book_title=str(user_input))
+    else:
+        return render_template('recommend.html', data=suggestions, title="Top 5 suggestions for ", book_title=str(user_input))
 
 
 if __name__ == "__main__":
