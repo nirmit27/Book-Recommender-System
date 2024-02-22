@@ -1,14 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
     display: none;
 }
 
-body{
+body {
     background-image: url("./blue_bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -17,14 +17,53 @@ body{
     background-attachment: fixed;
 }
 
-a{
+a {
     text-decoration: none !important;
 }
 
-a:hover{
+a:hover {
     color: blueviolet !important;
 }
 
-img{
+#for-you {
+    color: gold !important;
+    transition: 200ms ease-in;
+}
+
+#for-you:hover {
+    text-shadow: 0 0 12px gold;
+}
+
+img {
     box-shadow: 0 0 5px 1px white;
+}
+
+#sub-btn{
+    border: none !important;
+    color: blueviolet;
+    background-color: white;
+}
+
+#sub-btn:focus{
+    box-shadow: 0 0 10px gold !important;
+}
+
+#sub-btn:hover{
+    color: white;
+    background-color: slateblue !important;
+}
+
+#sub-btn:active{
+    color: white;
+    background-color: blueviolet !important;
+}
+
+#search-box{
+    border: none !important;
+}
+
+#search-box:focus{
+    outline: none !important;
+    border: none !important;
+    box-shadow: 0 0 10px gold;
 }
