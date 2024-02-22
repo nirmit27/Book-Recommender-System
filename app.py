@@ -35,13 +35,10 @@ def recommend():
     res = ''
     user_input = request.form.get('user_input')
     suggestions = sf(str(user_input))
-    for suggestion in suggestions:
-        for x in suggestion.values:
-            res += f"{str(x)}<br>"
-    return res
+    return render_template('recommend.html', data=suggestions, title="Top 5 Suggestions for ", book_title=str(user_input))
 
 
 if __name__ == "__main__":
     app.run(debug=True)
 
-# Command : export FLASK_DEBUG=1 && flask run
+# CLI Command for BASH : export FLASK_DEBUG=1 && flask run
