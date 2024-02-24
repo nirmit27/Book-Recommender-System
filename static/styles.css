@@ -28,7 +28,7 @@ a:hover {
 
 #for-you {
     color: gold !important;
-    transition: 200ms ease-in;
+    transition: 100ms ease-in;
 }
 
 #for-you:hover {
