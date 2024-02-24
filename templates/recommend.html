@@ -51,22 +51,19 @@
             </div>
 
             {% if data %}
-            {% for item in data %}
-            {% for i in item.values %}
-            <div class="col-3 mt-2">
-                <div class="card bg-primary bg-gradient bg-opacity-50   border-0" style="height: 22rem; width: auto;">
+            {% for i in data %}
+            <div class="col-2 mt-2 mx-auto">
+                <div class="card bg-primary bg-gradient bg-opacity-50 border-0" style="height: 24rem; width: auto;">
                     <div class="card-body p-4">
-                        <img src="{{i[2]}}" alt="book_cover" class="card-img-top mb-2 rounded"
+                        <img src="{{i[5]}}" alt="book_cover" class="card-img-top mb-3 rounded"
                             style="width: 6rem; height: 150px;">
-                        <h5 class="text-white" style="font-size: 1.1rem;">{{i[0]}}</h5>
-                        <h6 class="text-warning">{{i[1]}}</h6>
-                        <h6 class="text-white">{{i[3]}}&nbsp;reviews</h6>
-                        <h6 class="text-black p-1 border-1 rounded w-25 text-center bg-warning bg-gradient">{{i[4]}}
-                        </h6>
+                        <h5 class="text-white">{{i[1]}}</h5>
+                        <h6 class="text-warning">{{i[2]}}</h6>
+                        <h6 class="text-white">{{i[3]}}</h6>
+                        <h6 class="text-white">Published in <b class="text-warning">{{i[4]}}</b></h6>
                     </div>
                 </div>
             </div>
-            {% endfor %}
             {% endfor %}
             {% endif %}
 
@@ -74,21 +71,21 @@
     </div>
     </div>
     <!--------------------------------------------------------------------------------------------------->
-    <footer id="footer">
+    <footer id="footer" style="position: fixed !important;">
         <code>
             Made with &#128153; by <a href="">Nirmit Mishra</a>.
         </code>
     </footer>
-    <script>
+    <!-- <script>
         const footer = document.getElementById("footer");
         const input = document.getElementById("search-box");
-        if(input.value === ""){
+        if (input.value === "") {
             footer.style.position = "fixed";
         }
-        else{
+        else {
             footer.style.position = "relative";
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

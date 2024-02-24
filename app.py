@@ -1,9 +1,20 @@
 from flask import Flask, render_template, url_for, request
 import pandas as pd
 
-from data_fetch import data_util3 as sf
+df = pd.read_csv('new-datasets/pop.csv')
+fdf = pd.read_csv('new-datasets/final.csv')
+sdf = pd.read_csv('new-datasets/sugg.csv')
 
-df = pd.read_csv('datasets/pop.csv')
+
+def data_util(book):
+    book_data = []
+    if sdf[sdf['book-title'] == book].index.shape[0] == 0:
+        return book_data
+    for name in sdf[sdf['book-title'] == book].values[0][1:]:
+        for data in fdf[fdf['Book-Title'] == name].values:
+            book_data.append(data)
+    return book_data
+
 
 app = Flask(__name__)
 
@@ -32,13 +43,12 @@ def recommend_ui():
 
 @app.route('/recommend_books', methods=['post'])
 def recommend():
-    res = ''
     user_input = request.form.get('user_input')
-    suggestions = sf(str(user_input).strip())
+    suggestions = data_util(str(user_input).strip())
     if len(suggestions) == 0:
         return render_template('recommend.html', data=[], title="No suggestions found for ", book_title=str(user_input))
     else:
-        return render_template('recommend.html', data=suggestions, title="Top 5 suggestions for ", book_title=str(user_input))
+        return render_template('recommend.html', data=suggestions[1:], title="Top 5 suggestions for ", book_title=str(user_input))
 
 
 if __name__ == "__main__":
