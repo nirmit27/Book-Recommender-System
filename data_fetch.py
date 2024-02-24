@@ -1,7 +1,7 @@
 import pandas as pd
 
-df = pd.read_csv('datasets/final_data.csv')
-sdf = pd.read_csv('datasets/suggestions.csv')
+df = pd.read_csv('final-datasets/final_data.csv')
+sdf = pd.read_csv('final-datasets/suggestions.csv')
 
 # Data Cleaning
 
