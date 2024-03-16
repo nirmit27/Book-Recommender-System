@@ -53,5 +53,3 @@ def recommend():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-# CLI Command for BASH : export FLASK_DEBUG=1 && flask run

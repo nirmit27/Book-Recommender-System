@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recommender | For You</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 
     <!-- F A V I C O N ---------------------------------------------------------------------------------------------->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
@@ -14,24 +13,23 @@
     <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
     <!-- --------------------------------------------------------------------------------------------------------- -->
 
-    <!------------------------------------------------ BOOTSTRAP CSS ------------------------------------------------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!------------------------------------------------- TAILWIND CSS ------------------------------------------------>
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
     <!--------------------------------------------------------------------------------------------------------------->
 </head>
 
 <body>
     <!------------------------------------------- N A V B A R ------------------------------------------->
-    <nav class="navbar navbar-expand-lg bg-dark bg-gradient bg-opacity-75">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse">
-                <a class="navbar-brand mx-4 text-info fw-bold" href="/">Recommender</a>
-                <ul class="navbar-nav mx-4">
-                    <li class="nav-item mx-4">
-                        <a class="nav-link active text-white" aria-current="page" href="/">Top 50</a>
+    <nav class="">
+        <div class="">
+            <div class="">
+                <a class="" href="/">Recommender</a>
+                <ul class="">
+                    <li class="">
+                        <a class="" aria-current="page" href="/">Top 50</a>
                     </li>
-                    <li class="nav-item mx-4">
-                        <a class="nav-link active text-white" id="for-you" aria-current="page" href="/recommend">For
+                    <li class="">
+                        <a class="" id="for-you" aria-current="page" href="/recommend">For
                             You</a>
                     </li>
                 </ul>
@@ -39,18 +37,19 @@
         </div>
     </nav>
     <!--------------------------------------------------------------------------------------------------->
+
     <!--------------------------------------------- B O D Y --------------------------------------------->
-    <div class="container pt-1 pb-4">
-        <div class="row">
-            <div class="col-md-12 mt-2 mb-2">
-                <h2 class="my-3 text-white">{{ title }}&nbsp;<b style="color: gold;">{{ book_title }}</b></h2>
+    <div class="">
+        <div class="">
+            <div class="">
+                <h2 class="">{{ title }}&nbsp;<b style="color: gold;">{{ book_title }}</b></h2>
                 {% if not data %}
-                <form action="/recommend_books" method="post" class="col-md-6 mt-4">
+                <form action="/recommend_books" method="post" class="">
                     <input type="text" name="user_input" id="search-box" class="form-control"
                         placeholder="Enter a book name (e.g. The Da Vinci Code)" value="">
-                    <div class="d-flex justify-content-end">
+                    <div class="">
                         <input type="submit" value="Search Books" id="sub-btn"
-                            class="mt-3 mb-4 btn btn-md btn-info fw-bold">
+                            class="">
                     </div>
                 </form>
                 {% endif %}
@@ -58,15 +57,14 @@
 
             {% if data %}
             {% for i in data %}
-            <div class="col-2 mt-2 mx-auto">
-                <div class="card bg-primary bg-gradient bg-opacity-50 border-0" style="height: 25rem; width: auto;">
-                    <div class="card-body p-4">
-                        <img src="{{i[5]}}" alt="book_cover" class="card-img-top mb-3 rounded"
-                            style="width: 6rem; height: 150px;">
-                        <h5 class="text-white">{{i[1]}}</h5>
-                        <h6 class="text-warning">{{i[2]}}</h6>
-                        <h6 class="text-white">{{i[3]}}</h6>
-                        <h6 class="text-white">Published in <b class="text-warning">{{i[4]}}</b></h6>
+            <div class="">
+                <div class="" style="height: 25rem; width: auto;">
+                    <div class="">
+                        <img src="{{i[5]}}" alt="book_cover" class="">
+                        <h5 class="">{{i[1]}}</h5>
+                        <h6 class="">{{i[2]}}</h6>
+                        <h6 class="">{{i[3]}}</h6>
+                        <h6 class="">Published in <b class="text-warning">{{i[4]}}</b></h6>
                     </div>
                 </div>
             </div>
@@ -77,11 +75,13 @@
     </div>
     </div>
     <!--------------------------------------------------------------------------------------------------->
+
     <footer id="footer" style="position: fixed !important;">
         <code>
             Made with &#128153; by <a href="">Nirmit Mishra</a>.
         </code>
     </footer>
+
     <!-- <script>
         const footer = document.getElementById("footer");
         const input = document.getElementById("search-box");
@@ -92,6 +92,7 @@
             footer.style.position = "relative";
         }
     </script> -->
+
 </body>
 
 </html>
