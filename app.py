@@ -3,14 +3,15 @@ import pandas as pd
 import subprocess
 
 
-# Run the build script for TAILWIND
+# Run the build script for TAILWIND CSS
 subprocess.run(["npm", "run", "build:css"], check=True)
 
+# Fetching data to be displayed
 df = pd.read_csv('new-datasets/pop.csv')
 fdf = pd.read_csv('new-datasets/final.csv')
 sdf = pd.read_csv('new-datasets/sugg.csv')
 
-
+# Utililty function for data
 def data_util(book):
     book_data = []
     if sdf[sdf['book-title'] == book].index.shape[0] == 0:
@@ -23,52 +24,48 @@ def data_util(book):
 
 app = Flask(__name__)
 
+# Routes ...
 
-# Top 50 Books route
-
-# @app.route('/')
-# def index():
-#     return render_template('index.html', title="Top 50 Books",
-#                            book=list(df['Book-Title'].values[:50]),
-#                            author=list(df['Book-Author'].values[:50]),
-#                            img=list(df['Image-URL-M'].values[:50]),
-#                            votes=list(df['Total_Votes'].values[:50]),
-#                            rating=list(df['Average_Rating'].values[:50]),
-#                            p_25=df['Average_Rating'][:50].describe()['25%'],
-#                            p_50=df['Average_Rating'][:50].describe()['50%'],
-#                            p_75=df['Average_Rating'][:50].describe()['75%'])
-
-
-# # Recommender System route
-
-# @app.route('/recommend')
-# def recommend_ui():
-#     return render_template('recommend.html', title="Recommended For You")
-
-# @app.route('/recommend_books', methods=['post'])
-# def recommend():
-#     user_input = request.form.get('user_input')
-#     suggestions = data_util(str(user_input).strip())
-#     if len(suggestions) == 0:
-#         return render_template('recommend.html', data=[], title="No suggestions found for ", book_title=str(user_input))
-#     else:
-#         return render_template('recommend.html', data=suggestions[1:], title="Top 5 suggestions for ", book_title=str(user_input))
-
-
-# Tailwind UI
+# Home page
 
 @app.route('/')
 def index():
     return render_template('i.html')
 
+# Top 50 book recommendations
+
 @app.route('/top50')
 def top50():
-    return render_template('t50.html')
+    return render_template('t50.html',
+                           book=list(df['Book-Title'].values[:50]),
+                           author=list(df['Book-Author'].values[:50]),
+                           img=list(df['Image-URL-M'].values[:50]),
+                           votes=list(df['Total_Votes'].values[:50]),
+                           rating=list(df['Average_Rating'].values[:50]),
+                           p_25=df['Average_Rating'][:50].describe()['25%'],
+                           p_50=df['Average_Rating'][:50].describe()['50%'],
+                           p_75=df['Average_Rating'][:50].describe()['75%'])
+
+# Top 5 recommendations
 
 @app.route('/recommend')
-def recommend():
-    return render_template('r.html')
+def recommend_ui():
+    return render_template('r.html', title="Recommended For You")
 
+# Processing user input
+
+@app.route("/recommend_books", methods=["POST"])
+def recommend():
+    user_input = request.form.get('user_input')
+    suggestions = data_util(str(user_input).strip())
+
+    if len(suggestions) == 0:
+        return render_template('r.html', data=[], title="No suggestions found for ", book_title=str(user_input))
+    else:
+        return render_template('r.html', data=suggestions[1:], title="Top 5 suggestions for ", book_title=str(user_input))
+
+# About page
+    
 @app.route('/about')
 def about():
     return render_template('a.html')
