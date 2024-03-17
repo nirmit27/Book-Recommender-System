@@ -24,19 +24,19 @@ def data_util(book):
 
 app = Flask(__name__)
 
-# Routes ...
 
+# Routes ...
 # Home page
 
 @app.route('/')
 def index():
-    return render_template('i.html')
+    return render_template('index.html')
 
 # Top 50 book recommendations
 
 @app.route('/top50')
 def top50():
-    return render_template('t50.html',
+    return render_template('top50.html',
                            book=list(df['Book-Title'].values[:50]),
                            author=list(df['Book-Author'].values[:50]),
                            img=list(df['Image-URL-M'].values[:50]),
@@ -50,7 +50,7 @@ def top50():
 
 @app.route('/recommend')
 def recommend_ui():
-    return render_template('r.html', title="Recommended For You")
+    return render_template('recommend.html', title="Recommended For You")
 
 # Processing user input
 
@@ -60,15 +60,15 @@ def recommend():
     suggestions = data_util(str(user_input).strip())
 
     if len(suggestions) == 0:
-        return render_template('r.html', data=[], title="No suggestions found for ", book_title=str(user_input))
+        return render_template('recommend.html', data=[], title="No suggestions found for ", book_title=str(user_input))
     else:
-        return render_template('r.html', data=suggestions[1:], title="Top 5 suggestions for ", book_title=str(user_input))
+        return render_template('recommend.html', data=suggestions[1:], title="Top 5 suggestions for ", book_title=str(user_input))
 
 # About page
     
 @app.route('/about')
 def about():
-    return render_template('a.html')
+    return render_template('about.html')
 
 
 if __name__ == "__main__":
