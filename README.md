@@ -1,4 +1,4 @@
-# Book Recommender System
+<h1 align="center">Book Recommender System</h1>
 
 This is a book recommender website created using the **Flask** framework that makes book recommendations to the user based on a dataset from **Kaggle**.
 
