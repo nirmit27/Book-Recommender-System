@@ -54,7 +54,7 @@ def recommend_ui():
 
 # Processing user input
 
-@app.route("/recommend_books", methods=["POST"])
+@app.route("/recommend_books", methods=["post"])
 def recommend():
     user_input = request.form.get('user_input')
     suggestions = data_util(str(user_input).strip())

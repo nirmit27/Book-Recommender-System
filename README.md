@@ -8,7 +8,7 @@ This is a book recommender website created using the **Flask** framework that ma
 - **Top 50** books from the dataset based on **average ratings** are displayed on the `/top50` route.
 
 ### Recommendations
-![Recommender Page preview](./static/ss2.png)
+![Recommender Page preview](./static/ss_rec.png)
 * Based on the user input, **Top 5** recommendations are displayed on the `/recommend` route.
 * These recommendations are made on the basis of **cosine similarity** scores of the books with respect to the book provided as user input.
 
