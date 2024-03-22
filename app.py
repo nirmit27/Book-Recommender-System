@@ -60,7 +60,7 @@ def recommend():
     suggestions = data_util(str(user_input).strip())
 
     if len(suggestions) == 0:
-        return render_template('recommend.html', data=[], title="No suggestions found for ", book_title=str(user_input))
+        return render_template('recommend.html', data=[], title="No suggestions found", book_title="")
     else:
         return render_template('recommend.html', data=suggestions[1:], title="Top 5 suggestions for ", book_title=str(user_input))
 
