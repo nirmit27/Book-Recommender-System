@@ -1,6 +1,6 @@
 <h1 align="center">Book Recommendation System</h1>
 
-This is a book recommender website created using the **Flask** framework that makes book recommendations to the user based on a dataset from **Kaggle**. It leverages the **collaborative filtering** method of creating recommendation systems.
+This is a book recommendation website created using the **Flask** framework that makes book recommendations to the user based on a dataset from **Kaggle**. It leverages the **collaborative filtering** method of creating recommendation systems.
 
 ## Previews
 ### Top 50 Books
