@@ -7,9 +7,9 @@ import subprocess
 subprocess.run(["npm", "run", "build:css"], check=True)
 
 # Fetching data to be displayed
-df = pd.read_csv('new-datasets/pop.csv')
-fdf = pd.read_csv('new-datasets/final.csv')
-sdf = pd.read_csv('new-datasets/sugg.csv')
+df = pd.read_csv('processed-dataset/pop.csv')
+fdf = pd.read_csv('processed-dataset/final.csv')
+sdf = pd.read_csv('processed-dataset/sugg.csv')
 
 # Utililty function for data
 def data_util(book):
