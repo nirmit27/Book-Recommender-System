@@ -2,7 +2,7 @@
 
 This is a book recommendation website created using the **Flask** framework that makes book recommendations to the user based on a dataset from **Kaggle**. It leverages the **collaborative filtering** method of creating recommendation systems.
 
-## Previews
+## Preview
 ### Top 50 Books
 ![Top 50 Page preview](./static/ss_top50.png)
 - **Top 50** books from the dataset based on **average ratings** are displayed on the `/top50` route.
