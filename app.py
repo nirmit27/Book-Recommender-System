@@ -4,8 +4,8 @@ import subprocess
 
 
 # Run the build script for TAILWIND CSS
-subprocess.run(["npm", "install", "tailwindcss"], check=True)
-subprocess.run(["npm", "run", "build:css"], check=True)
+# subprocess.run(["npm", "install", "tailwindcss"], check=True)
+# subprocess.run(["npm", "run", "build:css"], check=True)
 
 # Fetching data to be displayed
 df = pd.read_csv('processed-dataset/pop.csv')
