@@ -14,6 +14,3 @@ This is a book recommendation website created using the **Flask** framework that
 
 ## Dataset link
 [Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
-
-## Deployment link
-[Web Service on Render](https://book-recommender-system-olce.onrender.com/)
